@@ -27,6 +27,16 @@ router.post('/', (req,res) => {
     User.fetch({email:req.params.email}, db)
         .then((data) => res.json(data))
         .catch((error) => res.json(error))
+}).get('/salestotal/:user/:db', (req,res) => {
+    var db = req.params.db == 1?db1:db2;
+    User.totalSalesAmount({user:req.params.user},db)
+        .then((data) => res.json(data))
+        .catch((error) => res.json(error))
+}).get('/productotal/:email/:db', (req,res) => {
+    var db = req.params.db == 1?db1:db2;
+    User.totalSalesAmount({email:req.params.email},db)
+        .then((data) => res.json(data))
+        .catch((error) => res.json(error))
 })
 
 module.exports = router;
