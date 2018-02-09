@@ -1,0 +1,172 @@
+{
+	"info": {
+		"name": "Rappi.Products",
+		"_postman_id": "9b9baeb8-4a0b-b5dd-f04a-c4e06be58f89",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"primaryDB\":true,\n    \"first_name\":\"Mock\",\n    \"last_name\":\"Test\",\n    \"birth_date\":\"11-03-1994\",\n    \"gender\":false,\n    \"email\":\"kike@gmail.com\",\n    \"password\":\"123456\"\n }"
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "creating user to create products"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"kike@gmail.com\",\n\t\"password\":\"123456\",\n\t\"primaryDB\":true\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Login to get token"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"primaryDB\":true,\n\t\"description\":\"Manzanas\",\n\t\"price\": 10.00,\n\t\"category\":1,\n\t\"tax\":1.00,\n\t\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWNjZXNzIjp0cnVlLCJkYXRhIjpbeyJ1c2VycyI6MSwiZmlyc3RfbmFtZSI6Ik1vY2siLCJsYXN0X25hbWUiOiJUZXN0IiwiZ2VuZGVyIjpmYWxzZSwiYmlydGhfZGF0ZSI6IjE5OTQtMTEtMDMiLCJlbWFpbCI6Imtpa2VAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkTktObW9wNlI0aTR6YnhDdXk2Ly5QdVo4MGFiUWJzQmhQQVhGR2tPSFZ6czhSV0l4blptWTYifV0sInN0YXR1cyI6MjAwLCJpYXQiOjE1MTczNzQ4ODAsImV4cCI6MTUxNzQxMDg4MH0.Jq2cft7S0f79hPKdcCynCd971P5YIZ9I-VCqWVG_PKk\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				},
+				"description": "POST.Product\n---\nCreate product\n"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products/manz/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/products/manz/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"manz",
+						"1"
+					]
+				},
+				"description": "GET.Products\n--\nGet Products with a description and a DB selection"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\":\"Manzanas verdes\",\n    \"price\":11.00,\n    \"tax\":1.10,\n    \"category\":1,\n    \"products\" : 1,\n    \"primaryDB\":true,\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWNjZXNzIjp0cnVlLCJkYXRhIjpbeyJ1c2VycyI6MSwiZmlyc3RfbmFtZSI6Ik1vY2siLCJsYXN0X25hbWUiOiJUZXN0IiwiZ2VuZGVyIjpmYWxzZSwiYmlydGhfZGF0ZSI6IjE5OTQtMTEtMDMiLCJlbWFpbCI6Imtpa2VAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkTktObW9wNlI0aTR6YnhDdXk2Ly5QdVo4MGFiUWJzQmhQQVhGR2tPSFZ6czhSV0l4blptWTYifV0sInN0YXR1cyI6MjAwLCJpYXQiOjE1MTczNzQ4ODAsImV4cCI6MTUxNzQxMDg4MH0.Jq2cft7S0f79hPKdcCynCd971P5YIZ9I-VCqWVG_PKk\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				},
+				"description": "PUT.Products\n--\nUpdate product attributes"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"products\":1,\n\t\"primaryDB\":true,\n\t\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWNjZXNzIjp0cnVlLCJkYXRhIjpbeyJ1c2VycyI6MSwiZmlyc3RfbmFtZSI6Ik1vY2siLCJsYXN0X25hbWUiOiJUZXN0IiwiZ2VuZGVyIjpmYWxzZSwiYmlydGhfZGF0ZSI6IjE5OTQtMTEtMDMiLCJlbWFpbCI6Imtpa2VAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkTktObW9wNlI0aTR6YnhDdXk2Ly5QdVo4MGFiUWJzQmhQQVhGR2tPSFZ6czhSV0l4blptWTYifV0sInN0YXR1cyI6MjAwLCJpYXQiOjE1MTczNzQ4ODAsImV4cCI6MTUxNzQxMDg4MH0.Jq2cft7S0f79hPKdcCynCd971P5YIZ9I-VCqWVG_PKk\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				},
+				"description": "DELETE.Products\n--\nDelete a product with an ID"
+			},
+			"response": []
+		}
+	]
+}

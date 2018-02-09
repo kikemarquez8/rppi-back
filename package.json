@@ -1,0 +1,29 @@
+{
+  "name": "rappi-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build":"node db/init.js",
+    "destroy":"node db/reset.js",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jest": "^22.1.4",
+    "jsonwebtoken": "^8.1.1",
+    "pg-promise": "^7.3.2",
+    "pgtools": "^0.3.0",
+    "prompt": "^1.0.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}

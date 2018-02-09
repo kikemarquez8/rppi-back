@@ -1,0 +1,144 @@
+{
+	"info": {
+		"name": "Rappi.Users",
+		"_postman_id": "a1653693-985e-8b84-fb53-eb11f0790454",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"primaryDB\":true,\n    \"first_name\":\"Kike\",\n    \"last_name\":\"Marquez\",\n    \"birth_date\":\"11-03-1994\",\n    \"gender\":true,\n    \"email\":\"kikemarquez18@gmail.com\",\n    \"password\":\"123456\"\n }"
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "POST\n----\nCreate User"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"primaryDB\": true,\n\t\"email\":\"kikemarquez18@gmail.com\",\n\t\"password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Login.\nRequired to get token to Update and Delete. \n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users/kikemarquez18@gmail.com/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/users/kikemarquez18@gmail.com/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"kikemarquez18@gmail.com",
+						"1"
+					]
+				},
+				"description": "READ\n----\nRead user from primary"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"primaryDB\":true,\n\t\"first_name\":\"Orangel\",\n    \"last_name\":\"Marquez\",\n    \"birth_date\":\"11-03-1994\",\n    \"gender\":true,\n    \"users\":\"1\",\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWNjZXNzIjp0cnVlLCJkYXRhIjpbeyJ1c2VycyI6MSwiZmlyc3RfbmFtZSI6Iktpa2UiLCJsYXN0X25hbWUiOiJNYXJxdWV6IiwiZ2VuZGVyIjp0cnVlLCJiaXJ0aF9kYXRlIjoiMTk5NC0xMS0wMyIsImVtYWlsIjoia2lrZW1hcnF1ZXoxOEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRMdlVlWjcvdUJBZ2Q4dWROd1BmWThlWmh5WS5RTVNaMXY4TkZ4T0pmeDB3eThxU0JHb2FnQyJ9XSwic3RhdHVzIjoyMDAsImlhdCI6MTUxNzM3MTE4MywiZXhwIjoxNTE3NDA3MTgzfQ.66nKjSpNYD642U-7aLhtaIqdmIizZHojgV2LaNmkMmA\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "PUT\n----\nupdate a user, primaryDB"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"users\":1,\n  \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWNjZXNzIjp0cnVlLCJkYXRhIjpbeyJ1c2VycyI6MSwiZmlyc3RfbmFtZSI6Iktpa2UiLCJsYXN0X25hbWUiOiJNYXJxdWV6IiwiZ2VuZGVyIjp0cnVlLCJiaXJ0aF9kYXRlIjoiMTk5NC0xMS0wMyIsImVtYWlsIjoia2lrZW1hcnF1ZXoxOEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRMdlVlWjcvdUJBZ2Q4dWROd1BmWThlWmh5WS5RTVNaMXY4TkZ4T0pmeDB3eThxU0JHb2FnQyJ9XSwic3RhdHVzIjoyMDAsImlhdCI6MTUxNzM3MTE4MywiZXhwIjoxNTE3NDA3MTgzfQ.66nKjSpNYD642U-7aLhtaIqdmIizZHojgV2LaNmkMmA\"\n}\n"
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "DELETE\n----\ndelete a user. Primary DB"
+			},
+			"response": []
+		}
+	]
+}
